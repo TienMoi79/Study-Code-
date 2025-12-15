@@ -1,0 +1,23 @@
+.tablelist {
+    border-collapse: collapse;        
+    border: 1px solid blueviolet;      
+}
+
+.tablelist th, 
+.tablelist td {
+    padding: 5px;                      
+    border: 1px solid black;           
+}
+
+.tablelist th {
+    background-color: blueviolet;       
+    color: white;                     
+}
+
+.tablelist tr:nth-child(even) {
+    background: #FFF;                  
+}
+
+.tablelist tr:nth-child(odd) {
+    background: bisque;                
+}

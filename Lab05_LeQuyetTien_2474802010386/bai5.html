@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Menus demo</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.5; margin:32px}
+h2{margin:32px 0 12px}
+.nav-horizontal{
+  background:#0a8c0a;        
+  display:inline-block; 
+  padding:0 8px;
+  border-radius:2px;
+}
+.nav-horizontal ul{
+  list-style:none; margin:0; padding:0; display:flex; gap:0;
+}
+.nav-horizontal a{
+  display:block; padding:12px 24px; color:#fff; text-decoration:none;
+}
+.nav-horizontal li.active > a,
+.nav-horizontal a:hover{ background:#ff8f6b; color:#fff; } 
+.nav-vertical{
+  width:180px; background:#0a8c0a; border-radius:2px; overflow:hidden;
+}
+.nav-vertical ul{ list-style:none; margin:0; padding:0; }
+.nav-vertical a{
+  display:block; padding:12px 20px; color:#fff; text-decoration:none;
+}
+.nav-vertical li.active > a,
+.nav-vertical a:hover{ background:#ff8f6b; }
+
+.menu{ width:560px; }
+.menu ul{ list-style:none; margin:0; padding:0; }
+.menu > ul > li{ position:relative; }
+.menu a{
+  display:block; padding:10px 16px; text-decoration:none;
+  color:#243b6b; background:#f7f7fb; border:1px solid #ececff;
+}
+.menu li + li a{ border-top:none; } 
+.menu li{ position:relative; min-width:200px; }
+
+.menu li ul{
+  display:none; position:absolute; top:0; left:100%;
+  min-width:220px; background:#fff; z-index:10;
+  box-shadow:0 6px 24px rgba(0,0,0,.06);
+}
+
+.menu li:hover > ul{ display:block; }
+
+.menu a:hover{ background:#ffffff }
+.menu li ul a{ background:#ffffff }
+.menu li ul a:hover{ background:#f4f6ff }
+.menu .current { color:#d33; font-weight:600; } 
+</style>
+</head>
+<body>
+
+<h2>Horizontal Navigation Bar</h2>
+<nav class="nav-horizontal" aria-label="Main">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">News</a></li>
+    <li class="active"><a href="#">Articles</a></li>
+    <li><a href="#">Forum</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<h2>Vertical Navigation Bar</h2>
+<nav class="nav-vertical" aria-label="Sidebar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">News</a></li>
+    <li class="active"><a href="#">Articles</a></li>
+    <li><a href="#">Forum</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<h2>Menu Đa Tầng</h2>
+<nav class="menu" aria-label="Multi-level">
+  <ul>
+    <li><a href="#">Menu item 1</a></li>
+    <li><a href="#">Menu item 2</a></li>
+    <li>
+      <a href="#">Menu item 3</a>
+      <ul>
+        <li><a href="#">Menu item 3.1</a></li>
+        <li><a href="#">Menu item 3.2</a></li>
+        <li><a href="#">Menu item 3.3</a></li>
+        <li>
+          <a href="#">Menu item 3.4</a>
+          <ul>
+            <li><a href="#">Menu item 3.4.1</a></li>
+            <li><a class="current" href="#">Menu item 3.4.2</a></li>
+            <li><a href="#">Menu item 3.4.3</a></li>
+            <li><a href="#">Menu item 3.4.4</a></li>
+            <li><a href="#">Menu item 3.4.5</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#">Menu item 4</a></li>
+    <li><a href="#">Menu item 5</a></li>
+    <li><a href="#">Menu item 6</a></li>
+    <li><a href="#">Menu item 7</a></li>
+    <li><a href="#">Menu item 8</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>

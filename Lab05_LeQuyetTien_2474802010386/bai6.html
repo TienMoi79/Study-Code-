@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sản phẩm</title>
+    <style>
+        h2 {
+            background-color: #c21807;   
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+        .product-list {
+            display: flex;              
+            justify-content: space-around; 
+        }
+
+        .product-item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s; 
+        }
+
+        .product-item:hover {
+            background-color: #e0f7fa; 
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-item p {
+            margin: 10px 0;
+        }
+
+        .price {
+            color: red;
+            font-weight: bold;
+        }
+
+        .buy-btn {
+            background-color: #c21807;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .buy-btn:hover {
+            background-color: #ff4d4d;  
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DANH SÁCH SẢN PHẨM</h2>
+
+    <div class="product-list">
+        <div class="product-item">
+            <img src="real.jpg" alt="Giày REAL">
+            <p>Giày nữ cao gót Chanel REAL</p>
+            <p class="price">4,885,000đ</p>
+            <button class="buy-btn">MUA</button>
+        </div>
+
+        <div class="product-item">
+            <img src="fake1.jpg" alt="Giày FAKE 1">
+            <p>Giày nữ cao gót Chanel FAKE 1</p>
+            <p class="price">1,190,000đ</p>
+            <button class="buy-btn">MUA</button>
+        </div>
+
+        <div class="product-item">
+            <img src="fake2.jpg" alt="Giày FAKE 2">
+            <p>Giày nữ cao gót Chanel FAKE 2</p>
+            <p class="price">85,000đ</p>
+            <button class="buy-btn">MUA</button>
+        </div>
+    </div>
+
+</body>
+</html>
