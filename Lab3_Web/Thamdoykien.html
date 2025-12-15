@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PHIẾU THĂM DÒ Ý KIẾN</title>
+  <style>
+    :root{
+      --blue:#336699;
+      --blue-dark:#274d73;
+      --blue-soft:#7fa6cc;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 24px 12px 60px;
+      color:#111;
+    }
+    h2{
+      text-align:center;
+      margin: 6px 0 16px;
+      letter-spacing:.2px;
+    }
+    .wrap{
+      width: 420px;
+      max-width: 94vw;
+      margin: 0 auto;
+    }
+
+    .row{display:flex; gap:10px; align-items:center; margin:8px 0;}
+    .row .label{width:110px;}
+
+    input[type="text"]{
+      flex:1;
+      padding:8px 10px;
+      border:2px solid var(--blue);
+      border-radius:4px;
+      font-size:15px;
+      outline:none;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"]{
+      accent-color: var(--blue);
+      width:18px; height:18px;
+      transform: translateY(2px);
+      margin-right:6px;
+    }
+
+    .group-title{
+      margin:10px 0 6px;
+    }
+    .checks label{
+      display:block;
+      line-height:1.9;
+    }
+
+    .actions{
+      display:flex; gap:16px; margin-top:14px;
+    }
+    .btn{
+      flex:1;
+      padding:10px 14px;
+      border:none;
+      border-radius:6px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition:.15s ease;
+    }
+    .btn:hover{ background:var(--blue-dark); }
+    .btn.secondary{
+      background: var(--blue-soft);
+    }
+    .btn.secondary:hover{
+      background:#6c94bd;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>PHIẾU THĂM DÒ Ý KIẾN</h2>
+
+    <form action="#" method="post" autocomplete="on">
+      <div class="row">
+        <div class="label">Tên đăng nhập:</div>
+        <input type="text" name="username" placeholder="" required />
+      </div>
+
+      <div class="row">
+        <div class="label">Giới tính:</div>
+        <label><input type="radio" name="gender" value="Nam" checked/> Nam</label>
+        <label style="margin-left:14px;"><input type="radio" name="gender" value="Nữ" /> Nữ</label>
+      </div>
+
+      <div class="group-title">Những mục bạn thường quan tâm trên Internet</div>
+      <div class="checks">
+        <label><input type="checkbox" name="topic" value="Tin tức" /> Tin tức</label>
+        <label><input type="checkbox" name="topic" value="Giải trí" /> Giải trí</label>
+        <label><input type="checkbox" name="topic" value="Góc học tập" /> Góc học tập</label>
+        <label><input type="checkbox" name="topic" value="Giáo dục" /> Giáo dục</label>
+        <label><input type="checkbox" name="topic" value="Các mục khác" /> Các mục khác</label>
+      </div>
+
+      <div class="actions">
+        <button type="reset" class="btn secondary">Cancel</button>
+        <button type="submit" class="btn">Gửi đi</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

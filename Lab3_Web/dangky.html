@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thông tin thành viên</title>
+  <style>
+    :root{
+      --blue:#336699;
+      --blue-dark:#274d73;
+      --blue-soft:#7fa6cc;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Arial, Helvetica, sans-serif; color:#111; padding:24px 12px 60px;}
+    h1{ text-align:center; margin:0 0 18px; letter-spacing:.4px;}
+    .wrap{ width:500px; max-width:95vw; margin:0 auto;}
+    .row{ display:flex; gap:10px; align-items:center; margin:8px 0;}
+    .label{ width:110px; }
+    .req{ color:#c21; margin-left:6px; }
+    input[type="text"], input[type="email"], input[type="number"], select, textarea{
+      flex:1;
+      padding:8px 10px;
+      border:2px solid var(--blue);
+      border-radius:4px;
+      background:#fff;
+      font-size:15px;
+      outline:none;
+      color:#000;
+    }
+    ::placeholder{ color:var(--blue); opacity:1; }
+    input[type="radio"], input[type="checkbox"]{
+      accent-color:var(--blue);
+      width:18px; height:18px; transform:translateY(2px); margin-right:6px;
+    }
+    input[type="file"]{ border:2px solid var(--blue); border-radius:4px; padding:6px; }
+    textarea{ min-height:96px; resize:vertical; }
+    .checks label{ display:block; line-height:1.9; }
+    .actions{ display:flex; gap:14px; margin-top:14px; }
+    .btn{
+      flex:1; padding:10px 14px; border:none; border-radius:6px;
+      background:var(--blue); color:#fff; font-weight:600; cursor:pointer; transition:.15s ease;
+    }
+    .btn:hover{ background:var(--blue-dark); }
+    .btn.secondary{ background:var(--blue-soft); }
+    .btn.secondary:hover{ background:#6c94bd; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>PHIẾU ĐĂNG KÝ</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+      <div class="row">
+        <div class="label">Họ và tên:</div>
+        <input type="text" name="fullname" placeholder="" required aria-required="true">
+        <span class="req">(*)</span>
+      </div>
+
+      <div class="row">
+        <div class="label">Địa chỉ:</div>
+        <input type="text" name="address" placeholder="">
+      </div>
+
+      <div class="row">
+        <div class="label">Email:</div>
+        <input type="email" name="email" placeholder="" required aria-required="true">
+        <span class="req">(*)</span>
+      </div>
+
+      <div class="row">
+        <div class="label">Giới tính:</div>
+        <label><input type="radio" name="gender" value="Nam" checked> Nam</label>
+        <label style="margin-left:14px;"><input type="radio" name="gender" value="Nữ"> Nữ</label>
+      </div>
+
+      <div class="row">
+        <div class="label">Tuổi:</div>
+        <input type="number" name="age" placeholder="" min="1" max="120" required aria-required="true" style="max-width:120px;">
+        <span class="req">(*)</span>
+      </div>
+
+      <div class="row" style="align-items:flex-start;">
+        <div class="label">Sở thích:</div>
+        <div class="checks">
+          <label><input type="checkbox" name="hobby" value="Thể thao"> Thể thao</label>
+          <label><input type="checkbox" name="hobby" value="Văn học"> Văn học</label>
+          <label><input type="checkbox" name="hobby" value="CNTT"> Công nghệ thông tin</label>
+          <label><input type="checkbox" name="hobby" value="Lịch sử"> Lịch sử</label>
+          <label><input type="checkbox" name="hobby" value="Game"> Game</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="label">Chuyên ngành:</div>
+        <select name="major">
+          <option selected>Công nghệ Web</option>
+          <option>Khoa học máy tính</option>
+          <option>Hệ thống thông tin</option>
+          <option>Trí tuệ nhân tạo</option>
+          <option>Thiết kế UI/UX</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="label">Gởi hình:</div>
+        <input type="file" name="avatar" accept="image/*">
+      </div>
+
+      <div class="row" style="align-items:flex-start;">
+        <div class="label">Yêu cầu:</div>
+        <textarea name="request" placeholder=""></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn">Gởi thông tin</button>
+        <button type="reset" class="btn secondary">Nhập lại</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

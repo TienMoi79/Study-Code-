@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký mua hoa</title>
+  <style>
+    :root {
+      --blue: #336699;
+      --blue-soft: #7fa6cc;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: black;
+      margin-bottom: 8px;
+    }
+    p.note {
+      text-align: center;
+      color: red;
+      margin-bottom: 20px;
+    }
+    .form-wrapper {
+      width: 550px;
+      max-width: 95vw;
+      margin: 0 auto;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .form-row label {
+      width: 120px;
+    }
+    .form-row input[type="text"],
+    .form-row input[type="tel"],
+    .form-row input[type="email"],
+    .form-row select,
+    .form-row textarea {
+      flex: 1;
+      padding: 6px 10px;
+      border: 2px solid var(--blue);
+      border-radius: 4px;
+    }
+    .form-row textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-row .required {
+      color: red;
+      margin-left: 6px;
+    }
+    .inline-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 6px 0;
+    }
+    input[type="radio"] {
+      accent-color: var(--blue);
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 18px;
+      font-weight: bold;
+      color: white;
+      background-color: var(--blue);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #25496e;
+    }
+    .btn.secondary {
+      background-color: var(--blue-soft);
+    }
+    .btn.secondary:hover {
+      background-color: #6b93bb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ĐĂNG KÝ MUA HOA</h1>
+  <p class="note">
+    Quý độc giả hãy điền đầy đủ các thông tin theo yêu cầu để nhận được sản phẩm hoa, cây cảnh ưa thích nhất
+  </p>
+
+  <div class="form-wrapper">
+    <form action="#" method="post">
+
+      <div class="form-row">
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="fullname" required>
+        <span class="required">*</span>
+      </div>
+
+ 
+      <div class="form-row">
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" name="address" required>
+        <span class="required">*</span>
+      </div>
+
+
+      <div class="form-row">
+        <label for="phone">Điện thoại:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <span class="required">*</span>
+      </div>
+
+
+      <div class="form-row">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="required">*</span>
+      </div>
+
+      <div class="form-row">
+        <label>Loại hoa:</label>
+        <select name="flower_type">
+          <option>Hoa Hồng</option>
+          <option>Hoa Lan</option>
+          <option>Hoa Cúc</option>
+          <option>Hoa Lily</option>
+        </select>
+        <select name="flower_color" style="margin-left: 10px;">
+          <option>Màu Đỏ</option>
+          <option>Màu Vàng</option>
+          <option>Màu Hồng</option>
+          <option>Màu Trắng</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="quantity">Số lượng:</label>
+        <input type="text" id="quantity" name="quantity" required>
+        <span class="required">*</span>
+      </div>
+
+      <div class="form-row">
+        <label>Đơn vị tính:</label>
+        <div class="inline-group">
+          <label><input type="radio" name="unit" value="Nhánh"> Nhánh</label>
+          <label><input type="radio" name="unit" value="Bó"> Bó</label>
+          <label><input type="radio" name="unit" value="Chậu"> Chậu</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Thanh toán:</label>
+        <div class="inline-group">
+          <label><input type="radio" name="payment" value="Tiền mặt"> Tiền mặt</label>
+          <label><input type="radio" name="payment" value="Chuyển khoản"> Chuyển khoản</label>
+          <label><input type="radio" name="payment" value="Master Card"> Master card</label>
+        </div>
+      </div>
+
+      <div class="form-row" style="align-items: flex-start;">
+        <label for="request">Yêu cầu:</label>
+        <textarea name="request" id="request"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn">Đăng ký</button>
+        <button type="reset" class="btn secondary">Nhập lại</button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>

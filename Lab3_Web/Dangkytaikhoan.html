@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng ký tài khoản</title>
+  <style>
+    :root{
+      --blue:#336699;
+      --blue-dark:#274d73;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      color:#111;
+      margin:0;
+      padding:24px 12px 60px;
+    }
+    h2{
+      text-align:center;
+      margin:8px 0 18px;
+      letter-spacing:.3px;
+    }
+
+    .wrap{
+      width: 360px;
+      max-width: 92vw;
+      margin: 0 auto;
+    }
+
+    label.section{
+      display:block;
+      font-weight:600;
+      margin:10px 0 6px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea{
+      width:100%;
+      padding:10px 12px;
+      border:2px solid var(--blue);
+      border-radius:4px;
+      outline:none;
+      background:#fff;
+      font-size:15px;
+    }
+    ::placeholder{ color:var(--blue); opacity:1; }
+
+    .row{
+      display:flex; gap:14px; margin-top:6px;
+    }
+    .row .col{flex:1}
+
+    .checks{
+      margin-top:6px;
+      line-height:1.9;
+    }
+    .checks input[type="checkbox"]{
+      transform: translateY(2px);
+      accent-color: var(--blue);
+      width:18px; height:18px;
+      margin-right:8px;
+    }
+
+    .actions{
+      display:flex; gap:14px; margin-top:14px;
+    }
+    .btn{
+      flex:1;
+      padding:10px 14px;
+      border:none;
+      border-radius:6px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+      transition:.15s ease;
+    }
+    .btn:hover{ background:var(--blue-dark); }
+    .btn.secondary{
+      background:#7fa6cc;
+    }
+    .btn.secondary:hover{
+      background:#6c94bd;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
+
+    <form action="#" method="post" autocomplete="on">
+      <input type="text" name="username" placeholder="Nhập username" required />
+
+      <input type="password" name="password" placeholder="Nhập mật khẩu" required />
+
+      <input type="email" name="email" placeholder="Nhập địa chỉ email" required />
+
+      <div class="row">
+        <div class="col">
+          <label class="section">Ngày sinh</label>
+          <input type="date" name="dob" required />
+        </div>
+        <div class="col">
+          <label class="section">Giới tính</label>
+          <select name="gender" required>
+            <option value="Nam" selected>Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
+          </select>
+        </div>
+      </div>
+
+      <label class="section">Sở thích</label>
+      <div class="checks">
+        <label><input type="checkbox" name="hobby" value="Xem phim" />Xem phim</label><br/>
+        <label><input type="checkbox" name="hobby" value="Nghe nhạc" />Nghe nhạc</label><br/>
+        <label><input type="checkbox" name="hobby" value="Đọc sách" />Đọc sách</label><br/>
+        <label><input type="checkbox" name="hobby" value="Du lịch" />Du lịch</label>
+      </div>
+
+      <label class="section">Giới thiệu bản thân</label>
+      <textarea name="about" rows="7" placeholder=""></textarea>
+
+      <div class="actions">
+        <button type="reset" class="btn secondary">Cancel</button>
+        <button type="submit" class="btn">Đăng ký</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
