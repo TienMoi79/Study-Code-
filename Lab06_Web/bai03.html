@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phép tính cơ bản</title>
+
+    <!-- CSS định dạng -->
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 100px;
+            height: 30px;
+            font-size: 18px;
+            margin: 5px;
+            text-align: center;
+        }
+        button {
+            width: 80px;
+            height: 35px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            background: forestgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: darkgreen;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- JavaScript xử lý phép tính -->
+    <script>
+        function tinhCong() {
+            var a = parseFloat(document.getElementById('so1').value);
+            var b = parseFloat(document.getElementById('so2').value);
+            document.getElementById('result').innerHTML = "Kết quả: " + (a + b);
+        }
+        function tinhTru() {
+            var a = parseFloat(document.getElementById('so1').value);
+            var b = parseFloat(document.getElementById('so2').value);
+            document.getElementById('result').innerHTML = "Kết quả: " + (a - b);
+        }
+        function tinhNhan() {
+            var a = parseFloat(document.getElementById('so1').value);
+            var b = parseFloat(document.getElementById('so2').value);
+            document.getElementById('result').innerHTML = "Kết quả: " + (a * b);
+        }
+        function tinhChia() {
+            var a = parseFloat(document.getElementById('so1').value);
+            var b = parseFloat(document.getElementById('so2').value);
+            if (b === 0) {
+                document.getElementById('result').innerHTML = "Không thể chia cho 0!";
+            } else {
+                document.getElementById('result').innerHTML = "Kết quả: " + (a / b);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Máy tính 4 phép cơ bản</h2>
+
+    <!-- Nhập liệu -->
+    <input type="number" id="so1" placeholder="Số 1">
+    <input type="number" id="so2" placeholder="Số 2"><br>
+
+    <!-- Các button phép tính -->
+    <button onclick="tinhCong()">Cộng</button>
+    <button onclick="tinhTru()">Trừ</button>
+    <button onclick="tinhNhan()">Nhân</button>
+    <button onclick="tinhChia()">Chia</button>
+
+    <!-- Hiển thị kết quả -->
+    <div id="result">Kết quả sẽ hiện ở đây</div>
+</body>
+</html>

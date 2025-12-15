@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Điều khiển hướng chuyển động</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+    }
+    h2 { margin-top: 20px; }
+
+    #Container {
+      width: 400px;
+      height: 400px;
+      background: #222;
+      margin: 20px auto;
+      position: relative;
+    }
+    #Animation {
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    button {
+      margin: 5px;
+      width: 100px;
+      height: 35px;
+      font-size: 16px;
+      background: forestgreen;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkgreen;
+    }
+  </style>
+
+  <script>
+    let posTop = 0;
+    let posLeft = 0;
+    let id = null;
+
+    function move(direction) {
+      clearInterval(id);
+      let elem = document.getElementById("Animation");
+
+      id = setInterval(frame, 5);
+
+      function frame() {
+        if (direction === "right") {
+          if (posLeft >= 350) clearInterval(id);
+          else { posLeft++; elem.style.left = posLeft + "px"; }
+        }
+        if (direction === "left") {
+          if (posLeft <= 0) clearInterval(id);
+          else { posLeft--; elem.style.left = posLeft + "px"; }
+        }
+        if (direction === "down") {
+          if (posTop >= 350) clearInterval(id);
+          else { posTop++; elem.style.top = posTop + "px"; }
+        }
+        if (direction === "up") {
+          if (posTop <= 0) clearInterval(id);
+          else { posTop--; elem.style.top = posTop + "px"; }
+        }
+        if (direction === "diagonal") {
+          if (posTop >= 350 || posLeft >= 350) clearInterval(id);
+          else {
+            posTop++;
+            posLeft++;
+            elem.style.top = posTop + "px";
+            elem.style.left = posLeft + "px";
+          }
+        }
+      }
+    }
+
+    function resetPosition() {
+      clearInterval(id);
+      posTop = 0;
+      posLeft = 0;
+      let elem = document.getElementById("Animation");
+      elem.style.top = "0px";
+      elem.style.left = "0px";
+    }
+  </script>
+</head>
+<body>
+  <h2>Điều khiển khối di chuyển</h2>
+  
+  <div id="Container">
+    <div id="Animation"></div>
+  </div>
+
+  <div>
+    <button onclick="move('up')">Lên</button>
+    <button onclick="move('down')">Xuống</button>
+    <button onclick="move('left')">Trái</button>
+    <button onclick="move('right')">Phải</button>
+    <button onclick="move('diagonal')">Chéo</button>
+    <button onclick="resetPosition()">Reset</button>
+  </div>
+</body>
+</html>

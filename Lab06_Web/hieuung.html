@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Script trên HTML</title>
+
+    <!-- Định dạng CSS -->
+    <style>
+        /* Định dạng CSS cho thanh Header */
+        .headerContainer {
+            background-color: forestgreen;
+            height: 60px;
+            position: relative;
+        }
+        div.headercontent {
+            position: absolute;
+            top: 5px;
+        }
+
+        /* Định dạng CSS cho Menu của Header */
+        ul {
+            margin-top: 10px;
+        }
+        li {
+            color: aqua;
+            list-style: none;
+            display: inline;
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 30px;
+            padding: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: aqua;
+        }
+
+        /* Định dạng CSS cho Khung hiệu ứng */
+        .container {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+        #Container {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            position: relative;
+            background: #222222;
+        }
+        #Animation {
+            width: 50px;
+            height: 50px;
+            right: auto;
+            position: absolute;
+            background-color: #FF0000;
+        }
+        #btn {
+            width: 150px;
+            height: 40px;
+            margin: 20px;
+            font-size: 25px;
+            color: gold;
+        }
+    </style>
+
+    <!-- Lập trình Script cho Hiệu ứng -->
+    <script type="text/javascript">
+        function myMove() {
+            var btn = document.getElementById("btn");
+            //btn.style.display = "none";
+            var elem = document.getElementById("Animation");
+            var pos = 0;
+            // frame (5), giá trị càng lớn thì tốc độ di chuyển càng chậm
+            // Ví dụ: frame (30) sẽ rất chậm
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Tạo thanh menu cho Header -->
+    <div class="headerContainer">
+        <div class="headercontent">
+            <ul>
+                <li><a href="https://www.vanlanguni.edu.vn/">Home</a></li>
+                <li id="btn" onclick="myMove()">Action</li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">Javascript</a></li>
+                <li><a href="#">PHP & MySQL</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tạo nội dung và khung hiệu ứng -->
+    <div class="container">
+        <h2>Hiệu ứng Animation</h2>
+        <button id="btn" onclick="myMove()">Action</button>
+        <div id="Container">
+            <div id="Animation"></div>
+        </div>
+    </div>
+</body>
+</html>
