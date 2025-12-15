@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Position sticky</title>
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+
+    .box { min-height: 2000px; }
+
+    .header{
+      position: sticky;  
+      top: 0;
+      width: 100%;
+      height: 40px;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      z-index: 10;
+    }
+
+    .content{
+      padding: 16px;
+
+      margin-top: 0 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="header">HEADER (sticky)</div>
+
+    <div class="content">
+      <h1>Danh sách khóa học</h1>
+      <ul>
+        <li>HTML/CSS</li>
+        <li>Javascript</li>
+        <li>ReactJS</li>
+        <li>NodeJS</li>
+      </ul>
+
+      <p style="height:1500px"></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.posts-list {
+    margin-top: 32px; /* Khoảng cách giữa tiêu đề lớn và danh sách bài đăng */
+}
+
+.post-item {
+    margin-bottom: 16px; /* Khoảng cách giữa các bài đăng */
+}
+
+.post-item .desc {
+    margin-top: 10px; /* Khoảng cách giữa tiêu đề bài đăng và phần mô tả */
+}
+
+.post-item .min-read {
+    margin-top: 12px; /* Khoảng cách giữa mô tả và thời gian đọc */
+}

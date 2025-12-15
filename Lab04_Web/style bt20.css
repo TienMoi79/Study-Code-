@@ -1,0 +1,8 @@
+.box {
+width: 100px;
+  height: 100px;
+  background-color: purple;
+  padding: 16px;
+  box-sizing: border-box; /* Giữ kích thước tổng cố định */
+  border: 2px solid black; 
+}
